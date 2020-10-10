@@ -27,14 +27,14 @@ def task2(movieA, movieB):
 def task3(movie):
     id_movie = movie[0]
     average_rating_movie = movie[1][0]/movie[1][1]
-    movie_tuple = (round(average_rating_movie, 1), id_movie)
+    movie_tuple = (round(average_rating_movie, 2), id_movie)
     return movie_tuple #Output: (average_rating_movie, id_movie)
 
 # Dictionary of movies name
-movies = movie_names('ml-1m/movies.dat')
+movies = movie_names('/home/walber/Dropbox/2020.3/Sistemas Distribuidos/Projetos/MovieLens-Data-Analisys/ml-1m/movies.dat')
 
 # Movies rating data
-movies_rating_data = sc.textFile('ml-1m/ratings.dat')
+movies_rating_data = sc.textFile('/home/walber/Dropbox/2020.3/Sistemas Distribuidos/Projetos/MovieLens-Data-Analisys/ml-1m/ratings.dat')
 
 initial_tuple_movies = movies_rating_data.map(task1)
 
